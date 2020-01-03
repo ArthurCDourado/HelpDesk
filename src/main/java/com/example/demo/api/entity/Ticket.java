@@ -1,5 +1,6 @@
 package com.example.demo.api.entity;
 
+import java.beans.Transient;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class Ticket {
 	
 	private String image;
 	
+	@org.springframework.data.annotation.Transient
 	private List<ChangeStatus> changes;
 
 	public String getId() {
