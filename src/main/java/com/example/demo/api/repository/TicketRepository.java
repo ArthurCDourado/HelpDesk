@@ -16,11 +16,11 @@ public interface TicketRepository extends MongoRepository<Ticket, String>{
 
 	//lista apenas o ticket de um determinado cliente
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+			String title, String status, String priority, String userId, Pageable pages);
 	
 	//lista o ticket pelo usuario designado
 	Page<Ticket> findByTitleIgnoreCaseContainingAndStatusAndPriorityAndAssignedUserIdOrderByDateDesc(
-			String title, String status, String priority, Pageable pages);
+			String title, String status, String priority, String userId, Pageable pages);
 	
 	Page<Ticket> findByNumber(Integer number, Pageable pages);
 	
